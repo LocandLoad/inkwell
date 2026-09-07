@@ -29,8 +29,7 @@
 
 - **Primary Actor:** Author (an authenticated user)
 - **Preconditions:** The user is authenticated.
-- **Postconditions:** A `Post` exists in the `Published` state, visible
-on the public feed and the author's profile.
+- **Postconditions:** A `Post` exists in the `Published` state, visible on the public feed and the author's profile.
 
 ### Main Success Scenario
 

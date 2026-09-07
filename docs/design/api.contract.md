@@ -12,3 +12,10 @@ Errors:
     401 INVALID_CREDENTIALS — "Invalid email or password."
 ## GET /api/posts?page=n
 Success: 200 { posts: PostPublic[], page: number, hasMore: boolean }
+## POST /api/posts/:id/comments
+Request: { body: string }
+Success: 201 { comment: Comment }
+Errors:
+    400 EMPTY_BODY - "Comment body cannot be empty"
+    401 UNAUTHORIZED - "Authentication required"
+    404 POST_NOT_FOUND - "The specified post cannot be found"
