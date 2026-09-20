@@ -36,22 +36,22 @@ export const AuthService = {
             throw new EmailAlreadyRegisteredError();
         }
         const tokens = TokenService.issueTokens(user);
-        return { user, ...tokens };
+        return { ...tokens };
     },
     async login({ email, password })
     {
-    const user = await UserRepository.findByEmail(email);
-    if (!user)
-    {
-        throw new InvalidCredentialsError();
-    }
-    const matches = await bcrypt.compare(password, user.passwordHash);
-    if (!matches)
-    {
-        throw new InvalidCredentialsError();
-    }
-    const tokens = TokenService.issueTokens(user);
-    return { user, ...tokens };
+        const user = await UserRepository.findByEmail(email);
+        if (!user)
+        {
+            throw new InvalidCredentialsError();
+        }
+        const matches = await bcrypt.compare(password, user.passwordHash);
+        if (!matches)
+        {
+            throw new InvalidCredentialsError();
+        }
+        const tokens = TokenService.issueTokens(user);
+        return { ...tokens };
     },
 };
 export { EmailAlreadyRegisteredError, WeakPasswordError, InvalidCredentialsError, ValidationError };
