@@ -5,7 +5,7 @@
   "description": "Inkwell API server",
   "type": "module",
   "scripts": {
-    "dev": "node --watch src/index.js"
+    "dev": "node --watch --env-file=.env src/index.js"
   },
   "repository": {
     "type": "git",
