@@ -4,11 +4,15 @@
 // md: and lg: prefixes layer on enhancements for larger viewports —
 // never the reverse.
 import { NavLink } from "react-router-dom";
+import image from "../assets/Inkwell.png";
 
 export function NavBar() {
     return (
         <nav className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
-            <span className="font-bold text-lg">Inkwell</span>
+            <div className="flex gap-4">
+                <span className="font-bold text-lg">Inkwell</span>
+                <img src={image} alt="Inkwell Icon" width="100" height="100"></img>
+            </div>
             <div className="flex gap-4">
                 <NavLink
                     to="/"
@@ -30,18 +34,3 @@ export function NavBar() {
         </nav>
     );
 }
-
-// import { Link } from "react-router-dom";
-// export function NavBar() {
-//     return (
-//         <nav className="flex justify-between border-b p-4">
-//             <Link to="/" className="font-bold">
-//                 Inkwell
-//             </Link>
-//             <div className="space-x-4">
-//                 <Link to="/write">Write</Link>
-//                 <Link to="/login">Log In</Link>
-//             </div>
-//         </nav>
-//     );
-// }
