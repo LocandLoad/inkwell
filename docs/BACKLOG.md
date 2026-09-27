@@ -12,3 +12,5 @@ Definition of Done: see README.md
 | US-07 | As an author, I want to see basic analytics on my posts, so that I understand my audience | Low | 5 | Backlog |
 | US-08 | As a author, I want to edit published posts, so that revisions can be made | Medium | 3 | Backlog |
 | US-09 | As a registered user, I want to reset my password, so that I can change passwords | Medium | 3 | Backlog |
+| US-10 | As an author, I want to tag my post with one or more topics, so that readers can discover it by subject. | Medium | 3 | Backlog |
+| US-11 | As a reader, I want to search posts by keyword or tag, so that I can find content relevant to me. | Medium | 3 | Backlog |
