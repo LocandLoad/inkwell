@@ -19,3 +19,5 @@
 - Review turnaround (informal, tracked qualitatively at this project's scale)
 ## Ownership
 - For this course project: the student/team implementing Inkwell owns SQA plan adherence.
+## Testing
+- Unit tests: Services and Repositories (Jest) — ACTIVE as of Lecture 12
