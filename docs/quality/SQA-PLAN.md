@@ -9,6 +9,7 @@
 ## Testing (expanded in Lecture 12-14)
 - Unit tests: Services and Repositories (Jest) — starting Lecture 12
 - Integration tests: Routes (Supertest) — starting Lecture 13
+- Component tests: React components (RTL) — ACTIVE (Lecture 13)
 - End-to-end tests: critical user flows (Playwright) — starting Lecture 14
 ## Defect Tracking
 - All discovered defects (via review, testing, or manual use) recorded in docs/quality/DEFECT-LOG.md

@@ -30,6 +30,14 @@ export function NavBar() {
                 >
                     Write
                 </NavLink>
+                <NavLink
+                    to="/login"
+                    className={({ isActive }) =>
+                    `text-sm ${isActive ? "font-semibold text-indigo-600" : "text-gray-600"}`
+                    }
+                >
+                    Login
+                </NavLink>
             </div>
         </nav>
     );
