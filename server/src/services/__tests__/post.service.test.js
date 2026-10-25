@@ -1,5 +1,5 @@
 import { jest } from "@jest/globals";
-const mockPostRepository = { createWithTags: jest.fn() , searchPublished: jest.fn()};
+const mockPostRepository = { createWithTags: jest.fn() , searchPublished: jest.fn(), findPublished: jest.fn()};
 const mockEventBus = { emit: jest.fn() };
 jest.unstable_mockModule("../../repositories/post.repository.js", () => ({
     PostRepository: mockPostRepository,
@@ -65,3 +65,17 @@ test("search() returns the same posts for uppercase and lowercase queries", asyn
 
     expect(uppercaseResult).toEqual(lowercaseResult);
 });
+
+test("get/posts clamps large values", async () => {
+
+    const posts = [
+        { id: "p1", title: "Hello World", status: "PUBLISHED" },
+    ];
+
+    mockPostRepository.findPublished.mockResolvedValue(posts);
+
+    const result = await PostService.listPublished({ query: "Hello", pageSize: 99999});
+    const result2 = await PostService.listPublished({ query: "Hello", pageSize: 4158679});
+
+    expect(result.pageSize).toEqual(result2.pageSize);
+})

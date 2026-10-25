@@ -1,5 +1,7 @@
 import { Router } from "express";
 import { PostService } from "../services/post.service.js";
+import { requireAuth } from "../middleware/auth.middleware.js";
+
 const router = Router();
 router.post("/posts", async (req, res) => {
     try {
@@ -23,4 +25,20 @@ router.get("/posts", async (req, res, next) => {
         next(err);
     }
 });
+
+router.post("/posts", requireAuth, async (req, res, next) =>
+{
+    try {
+        // Never trust client-supplied identity fields — derive
+        // authorId from the authenticated request, not the request body.
+        const post = await PostService.publish({
+            ...req.body,
+            authorId: req.user.id, // set by requireAuth middleware from the verified JWT
+        });
+        res.status(201).json(post);
+    } catch (err) {
+        next(err);
+    }
+});
+
 export default router;
