@@ -1,6 +1,5 @@
 ## What does this PR do?
-<!-- One or two sentences. Reference the backlog item ID (e.
-g., US-08). -->
+<!-- One or two sentences. Reference the backlog item ID (e.g., US-08). -->
 ## Checklist
 ### Architecture conformance
 - [ ] No route handler contains business logic that belongs in a Service
