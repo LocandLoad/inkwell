@@ -51,7 +51,8 @@ export const AuthService = {
     if (!user || !(await bcrypt.compare(password, user.passwordHash))) {
       // A09's fix: a failed login attempt is now a recorded, visible
       // event, not a silent failure only the requester ever sees.
-      console.warn(`[SECURITY] Failed login attempt for email=${email} at ${new Date().toISOString()}`);
+      //console.warn(`[SECURITY] Failed login attempt for email=${email} at ${new Date().toISOString()}`);
+      logger.warn({ event: "auth.login.failed", email }, "Failed login attempt");
       throw new InvalidCredentialsError();
     }
 
