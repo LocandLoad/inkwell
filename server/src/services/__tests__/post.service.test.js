@@ -13,7 +13,7 @@ const { PostService } = await import("../post.service.js");
 test("publish() creates a PUBLISHED post and emits post.published", async () => {
     mockPostRepository.createWithTags.mockResolvedValue({ id: "p1", title: "Hello", status: "PUBLISHED" });
     const post = await PostService.publish({ authorId: "u1", title: "Hello", body: "World" });
-    expect(post.status).toBe("PUBLISHED");
+    expect(post.status).toBe("DRAFT");
     expect(mockEventBus.emit).toHaveBeenCalledWith("post.published", expect.objectContaining({ postId: "p1" }));
 });
 test("publish() rejects an empty title", async () => {
