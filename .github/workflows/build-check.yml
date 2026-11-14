@@ -12,11 +12,11 @@ on:
     branches: [main]
   # Section 4.1's "event" — this workflow runs automatically whenever
   # code is pushed to main, or a pull request targets main.
-  permissions:
-    contents: read
-    # Section 4.2's "permissions": this workflow only reads the code, so
-    # its token gets read access and nothing else (least privilege,
-    # Lecture 15). A compromised step cannot push commits or edit issues.
+permissions:
+  contents: read
+  # Section 4.2's "permissions": this workflow only reads the code, so
+  # its token gets read access and nothing else (least privilege,
+  # Lecture 15). A compromised step cannot push commits or edit issues.
 
 jobs:
   docker-build:
