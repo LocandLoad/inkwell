@@ -10,7 +10,7 @@ services:
     runtime: image
     plan: free
     image:
-      url: ghcr.io/locandload/inkwell-server:main
+      url: ghcr.io/locandload/inkwell-server:4fcf7c2ad0ca5c18fb1870091affa0da77f48b49
       creds:
         fromRegistryCreds:
           name: ghcr-read-packages
@@ -31,7 +31,7 @@ services:
     runtime: image
     plan: free
     image:
-      url: ghcr.io/locandload/inkwell-server:main
+      url: ghcr.io/locandload/inkwell-server:4fcf7c2ad0ca5c18fb1870091affa0da77f48b49
       creds:
         fromRegistryCreds:
           name: ghcr-read-packages
