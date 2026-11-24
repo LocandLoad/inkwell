@@ -10,7 +10,7 @@ services:
     runtime: image
     plan: free
     image:
-      url: ghcr.io/LocandLoad/inkwell-server:<sha-of-a-green-main-commit>
+      url: ghcr.io/locandload/inkwell-server:main
       creds:
         fromRegistryCreds:
           name: ghcr-read-packages
@@ -31,7 +31,7 @@ services:
     runtime: image
     plan: free
     image:
-      url: ghcr.io/LocandLoad/inkwell-server:<sha-of-a-green-main-commit>
+      url: ghcr.io/locandload/inkwell-server:amin
       creds:
         fromRegistryCreds:
           name: ghcr-read-packages
