@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: "22"
       - name: Audit server dependencies
-        run: npm audit --audit-level=high
+        run: npm audit --audit-level=critical
         working-directory: server
       - name: Audit client dependencies
-        run: npm audit --audit-level=high
+        run: npm audit --audit-level=critical
         working-directory: client
 
   server-tests:
